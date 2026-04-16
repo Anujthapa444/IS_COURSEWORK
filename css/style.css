@@ -26,4 +26,7 @@ nav ul li a:hover{
     background-color:#065f46;
     border-radius: 5PX;
 }
-
+h1{
+    text-align: center;
+    margin-top: 2rem;
+}
