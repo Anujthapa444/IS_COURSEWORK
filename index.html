@@ -6,24 +6,16 @@
         <meta name="description" content="ASK SHOP is your one-stop online store.">
         <title>ASK SHOP - Your One-Stop Online Store</title>
         <link rel="stylesheet" href="css/style.css">
-<style>
-    .home-highlight{
-        border-left: 6px solid #065f46;
-        background: #f0fdf4;
-        padding:1rem;
-        border-radius: 0.5rem;
-    }
-    </style>
     </head>
     <body>
     <div class="navbar">
         <div class ="container nav-inner">
-                <a herf="indexhtml" style="text-align: center; color:wite;
+                <a herf="/index.html" style="text-align: center; color:wite;
                  text-decoration: none;">
                  <div class="brand">ASK SHOP</div>
-                </a>"
+                </a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="/index.html" class="active">Home</a></li>
                 <li><a href="pages/blog.html">Blog</a></li>
                 <li><a href="pages/products.html">Products</a></li>
                 <li><a href="pages/research.html">Research</a></li>
@@ -31,5 +23,65 @@
             </ul> 
         </div>
     </div> 
+
+    <header class ="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <h1>Welcome to ASK SHOP</h1>
+                <p>Your one-stop online store for all your needs.</p>
+                <a href="pages/products.html" class="btn">Shop Now</a>
+            </div>
+            <button id ="welcome-btn" 
+            class="btn"
+            style = "margin-top: 0.5rem; box-shadow: 0 0 0 3px rgba(255,255,255,0.2 );">
+            Welcome Message
+        </button>
+        </div>
+    </header>
+
+    <main class="container section">
+        <div class="home-highlight">
+            <h2></h2>Project Brief Description</h2>
+            <p>
+            ASK SHOP is an online store that offers a wide range of products, including eco-friendly items inspired by nature in Pokhara. Our mission is to provide customers with high-quality products while promoting sustainability and supporting local artisans. We aim to create a convenient and enjoyable shopping experience for our customers, while also contributing to the well-being of our planet.  
+            </p>
+        </div>
+        <section class = "section">
+            <h2> What You Will Find</h2>
+            <div class="grid">
+                <div class="card">
+                   <article class="card">
+                    <h3>Eco Product Shop</h3>
+                    <p>
+                        Buy local products inspired by nature at Pokhara like bamboo toothbrushes, ntural soaps, and non -plastic essentials.
+                    </p>
+                    </div>
+                </article>   
+                <article class="card">
+                <h3>Technology & Sustainability Blog</h3>
+                <p>
+                 Learn how teachnology impact urban gardening and sustainable living through our blog posts, tips, and guides for Nepali households.  
+                </p>
+                </div>
+                </article>
+                 <article class="card">
+                <h3>Research Comparision</h3>
+                <p>
+                    Comparing our website design with 5 different websites.
+                </p>
+                </div>
+                </article>
+            </div>
+        </section>
+    </main> 
+
+    <footer >
+        <div class="container">
+            <p class ="footer-text">&copy; ASK SHOP | Informatics College Pokhara | Course Code: CC4057NP 
+                <br/>
+                Todays Date: <span id="todayDate"></span>
+            </p>
+        </div>
+    </footer>
     </body>
 </html> 
