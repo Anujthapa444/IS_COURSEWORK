@@ -1,0 +1,200 @@
+  /* UrbanSprout external stylesheet (Pokhara theme) */
+
+/* ===== Root Theme Colors ===== */
+:root {
+  --green-dark: #1b5e20;
+  --green-main: #2e7d32;
+  --green-light: #66bb6a;
+  --sky-lake: #dff3ff;
+  --cream: #f5f8ef;
+  --text-dark: #1f2937;
+  --card-bg: #ffffff;
+  --accent: #ef6c00;
+}
+
+/* ===== Global Reset and Body ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(180deg, var(--sky-lake) 0%, #f8fff8 45%, #eef7e7 100%);
+  line-height: 1.6;
+}
+
+/* ===== Shared Layout Wrappers ===== */
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: var(--green-dark);
+  color: #fff;
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0.4rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Hero and Header Blocks ===== */
+.hero {
+  background: url("https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=60")
+    center/cover no-repeat;
+  min-height: 48vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  background: rgba(27, 94, 32, 0.66);
+  width: 100%;
+  padding: 3rem 0;
+}
+
+.hero h1,
+.hero p {
+  color: #fff;
+}
+
+/* ===== Cards and Grid ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 0.7rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border: none;
+  background: var(--green-main);
+  color: #fff;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.45rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--green-dark);
+}
+
+.btn-secondary {
+  background: var(--accent);
+}
+
+/* ===== Tables ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th,
+td {
+  border: 1px solid #d7e3cf;
+  padding: 0.7rem;
+  text-align: left;
+}
+
+th {
+  background-color: #dff0d8;
+}
+
+/* ===== Form Blocks ===== */
+.form-group {
+  margin-bottom: 0.8rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #b8c7b0;
+  border-radius: 0.35rem;
+  font: inherit;
+}
+
+.error {
+  color: #b00020;
+  font-size: 0.9rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 2rem;
+  background: #0f3d12;
+  color: #e8f5e9;
+  padding: 1rem 0;
+  font-size: 0.92rem;
+}
+
+/* ===== Utility ===== */
+.section {
+  padding: 2rem 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 99px;
+  background: #e2f5da;
+  color: #205a21;
+  font-size: 0.82rem;
+}
+.footer-text {
+  font-size: 0.92rem;
+  color: #e8f5e9;
+  text-align: center;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta details -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About UrbanSprout team and feedback form."
+    />
+    <title>UrbanSprout Nepal | About Us</title>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Internal CSS -->
+    <style>
+      /* Portfolio visual variants */
+      .member-a {
+        border-top: 5px solid #2e7d32;
+      }
+      .member-b {
+        border-right: 5px solid #ef6c00;
+      }
+      .member-c {
+        border-left: 5px solid #009688;
+      }
+      .member-d {
+        border-bottom: 5px solid #5e35b1;
+      }
+      .member-e {
+        background: linear-gradient(145deg, #fff, #eef9ec);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">  
+      <div class="container nav-inner">
+        <a href="../index.html" style="text-align: center; color: white ; text-decoration: none;"><div class="brand">UrbanSprout Pokhara</div></a>
+        <nav class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="blog.html">Blog</a>
+          <a href="research.html">Research</a>
+          <a href="about.html" class="active">About Us</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="container section">
+      <h1>About Our Team</h1>
+      <p>
+        We are BSc (Hons) Computing students from Informatics College Pokhara,
+        developing this UrbanSprout coursework for CC4057NP.
+      </p>
+
+      <section class="grid">
+        <article class="card member-a">
+          <h3>Anuj Thapa</h3>
+          <p><strong>Role:</strong> Project Coordinator / Frontend</p>
+          <p>Skills: HTML5, CSS3, presentation, teamwork.</p>
+          <p>Interest: UI design for sustainability platforms in Pokhara.</p>
+        </article>
+
+        <article class="card member-b">
+          <h3>Asal Khatrai</h3>
+          <p><strong>Role:</strong> Content & Product Research</p>
+          <p>Skills: product copywriting, research analysis.</p>
+          <p>Interest: eco-branding and market trends in Pokhara valley.</p>
+        </article>
+
+        <article class="card member-c">
+          <h3>Sushant Chhetri</h3>
+          <p><strong>Role:</strong> JavaScript Developer</p>
+          <p>Skills: validation logic, user interaction scripts.</p>
+          <p>Interest: functional UI and accessible web components.</p>
+        </article>
+
+        <article class="card member-d">
+          <h3>Samir Thapa Magar</h3>
+          <p><strong>Role:</strong> UX and Visual Layout</p>
+          <p>Skills: wireframing, responsive structure, testing.</p>
+          <p>Interest: design systems and user-focused pages.</p>
+        </article>
+
+        <article class="card member-e">
+          <h3>Kusum Rana Magar</h3>
+          <p><strong>Role:</strong> Documentation and QA</p>
+          <p>Skills: report writing, test cases, project formatting.</p>
+          <p>Interest: quality assurance and usability reporting.</p>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2>Feedback Form</h2>
+        <!-- Mandatory form tag with comments -->
+        <form id="feedbackForm" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Feedback Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+
+          <p id="formError" class="error"></p>
+          <button class="btn btn-secondary" type="submit">Send Feedback</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p class="footer-text">
+          UrbanSprout Nepal | Informatics College Pokhara | Course: CC4057NP
+          <br />Today: <span id="todayDate"></span>
+        </p>
+      </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>
