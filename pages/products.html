@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Mandatory meta tags -->
+    <!-- Page metadata tells the browser how to display and scale this page. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -9,9 +9,11 @@
       content="UrbanSprout products page with local Nepali eco-friendly products."
     />
     <title>UrbanSprout Nepal | Products</title>
+
+    <!-- Link to the shared CSS file used by all pages. -->
     <link rel="stylesheet" href="../css/style.css" />
 
-    <!-- Internal CSS for product specific styles -->
+    <!-- Internal CSS for product page only. This styles the old price text. -->
     <style>
       /* Price styles */
       .old-price {
@@ -22,6 +24,7 @@
     </style>
   </head>
   <body>
+    <!-- Navbar section with links to the site pages. -->
     <div class="navbar">
       <div class="container nav-inner">
         <a href="../index.html" style="text-align: center; color: white ; text-decoration: none;"><div class="brand">UrbanSprout Pokhara</div></a>
@@ -31,17 +34,18 @@
           <a href="blog.html">Blog</a>
           <a href="research.html">Research</a>
           <a href="about.html">About Us</a>
-          <a href="cart.html">Cart</a>
         </nav>
       </div>
     </div>
 
+    <!-- Main page content area. -->
     <main class="container section">
       <h1>Shop for Earth-Friendly Products from Pokhara</h1>
       <p>
         All products use little plastic, are good for the earth, and are made by small local businesses in Pokhara.
       </p>
 
+      <!-- Product filter: choose a category to only show matching products. -->
       <div class="form-group" style="max-width: 300px">
         <label for="productFilter">Filter Products</label>
         <select id="productFilter">
@@ -49,9 +53,11 @@
           <option value="gardening">Gardening Essentials</option>
         </select>
       </div>
-
-      <section class="grid">
-        <article class="card product-card" data-category="gardening">
+      
+      <!-- Layout with the product list on the left and cart sidebar on the right. -->
+      <div class="product-layout">
+        <section class="grid product-grid">
+          <article class="card product-card" data-category="gardening">
           <img
             src="../images/product-seedkit.png"
             alt="Vegetable seed kit"
@@ -131,11 +137,33 @@
 
       </section>
 
-      <section class="section">
-        <a class="btn btn-secondary" href="cart.html">View Cart</a>
-      </section>
+      <!-- This sidebar shows the cart contents and totals for this page. -->
+      <aside class="cart-sidebar">
+        <div class="card">
+          <h2>Cart Summary</h2>
+          <p>Add products to the cart and see the total here.</p>
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Qty</th>
+              </tr>
+            </thead>
+            <tbody id="sidebarCartBody">
+              <tr>
+                <td colspan="2">Cart is empty.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><strong>Total Items:</strong> <span id="sidebarCartItems">0</span></p>
+          <p><strong>Total Price:</strong> <span id="sidebarCartTotal">NPR 0</span></p>
+          <button class="btn btn-secondary" id="clearSidebarCartBtn">Clear Cart</button>
+        </div>
+      </aside>
+    </div>
 
       <section class="section">
+        <!-- Summary table is a simple list of product details for comparison. -->
         <h2>Product Summary Table</h2>
         <table>
           <thead>

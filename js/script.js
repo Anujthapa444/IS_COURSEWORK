@@ -37,6 +37,10 @@ function showAlertBar(message) {
   }, 1800);
 }
 
+/**
+ * Read the saved cart from the browser.
+ * Returns an array of cart items or an empty array.
+ */
 function getCart() {
   try {
     return JSON.parse(localStorage.getItem("urbansproutCart") || "[]");
@@ -45,10 +49,18 @@ function getCart() {
   }
 }
 
+/**
+ * Save the cart into the browser so it stays after refresh.
+ * @param {Array} cart - Array of cart item objects.
+ */
 function saveCart(cart) {
   localStorage.setItem("urbansproutCart", JSON.stringify(cart));
 }
 
+/**
+ * Add a product to the cart.
+ * If the product is already in the cart, increase quantity by one.
+ */
 function addToCart(name, price) {
   var cart = getCart();
   var existing = cart.find(function (item) {
@@ -63,8 +75,12 @@ function addToCart(name, price) {
 
   saveCart(cart);
   showAlertBar(name + " added to cart.");
+  renderCartSidebar();
 }
 
+/**
+ * Attach click listeners to all add-to-cart buttons.
+ */
 function bindAddToCartButtons() {
   var buttons = document.querySelectorAll(".add-to-cart-btn");
   if (!buttons.length) return;
@@ -78,6 +94,11 @@ function bindAddToCartButtons() {
   });
 }
 
+/**
+ * Render the cart page table when a separate cart page exists.
+ * This page is not used in the current five-page structure,
+ * but the function remains for compatibility.
+ */
 function renderCartPage() {
   var body =
     document.getElementById("cartBody") || document.getElementById("estimateBody");
@@ -139,7 +160,63 @@ function renderCartPage() {
 }
 
 /**
+ * Render the cart summary inside the product page sidebar.
+ * This shows item names, quantities, and total values.
+ */
+function renderCartSidebar() {
+  var body = document.getElementById("sidebarCartBody");
+  var totalTarget = document.getElementById("sidebarCartTotal");
+  var countTarget = document.getElementById("sidebarCartItems");
+  var clearBtn = document.getElementById("clearSidebarCartBtn");
+
+  if (!body || !totalTarget || !countTarget) return;
+
+  function render() {
+    var cart = getCart();
+    body.innerHTML = "";
+
+    if (!cart.length) {
+      body.innerHTML =
+        '<tr><td colspan="2">Cart is empty.</td></tr>';
+      totalTarget.textContent = "NPR 0";
+      countTarget.textContent = "0";
+      return;
+    }
+
+    var total = 0;
+    var totalQty = 0;
+    cart.forEach(function (item) {
+      var lineTotal = item.price * item.qty;
+      total += lineTotal;
+      totalQty += item.qty;
+      body.innerHTML +=
+        '<tr><td>' +
+        item.name +
+        '</td><td>' +
+        item.qty +
+        '</td></tr>';
+    });
+
+    totalTarget.textContent = "NPR " + total;
+    countTarget.textContent = String(totalQty);
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      saveCart([]);
+      render();
+      showAlertBar("Cart cleared.");
+    });
+  }
+
+  render();
+}
+
+/**
  * Dynamically updates current date in footer section.
+ */
+/**
+ * Put today's date into the footer so the page looks up to date.
  */
 function updateCurrentDate() {
   var dateTarget = document.getElementById("todayDate");
@@ -151,6 +228,10 @@ function updateCurrentDate() {
 
 /**
  * Filters products based on category selection.
+ */
+/**
+ * Show only products that match the selected filter.
+ * This uses the data-category attribute on each product card.
  */
 function filterProducts() {
   var filter = document.getElementById("productFilter");
@@ -212,10 +293,15 @@ function validateFeedbackForm(event) {
 /**
  * Initializes all listeners after page load.
  */
+/**
+ * Set up the page when the browser finishes loading.
+ * This binds buttons, renders the cart, and starts filters.
+ */
 function initSite() {
   updateCurrentDate();
   bindAddToCartButtons();
   renderCartPage();
+  renderCartSidebar();
 
   var filter = document.getElementById("productFilter");
   if (filter) {
