@@ -77,7 +77,7 @@ body {
 
 /* ===== Hero and Header Blocks ===== */
 .hero {
-  background: url("https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=60")
+  background: url("../images/hero-bg.png")
     center/cover no-repeat;
   min-height: 48vh;
   display: flex;
